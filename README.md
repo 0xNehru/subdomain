@@ -93,6 +93,7 @@ Pull requests are welcome! If you have suggestions or want to add more sources, 
 📜 License
 
 This project is open-source under the MIT License.
+
 👤 Author
 
 0xNehru - Cybersecurity Enthusiast & Pentester
