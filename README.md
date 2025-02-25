@@ -1,19 +1,24 @@
-🔎 Subdomain Enumeration Tool by 0xNehru
+🔎**Subdomain Enumeration Tool by 0xNehru**
 
-📌 Overview
+📌**Overview**
 
 This is an automated subdomain enumeration tool that gathers subdomains from multiple OSINT sources and APIs. It is designed for penetration testers, bug bounty hunters, and cybersecurity professionals to efficiently discover subdomains.
 
-🚀 Features
+🚀 **Features**
 
 ✅ Uses 10+ different sources for subdomain discovery
-✅ Supports API-based & public data sources
-✅ Removes duplicates and provides a clean output
-✅ Parallel execution for faster results
-✅ Lightweight & customizable
-📖 Data Sources Used
 
-This tool collects subdomains from:
+✅ Supports API-based & public data sources
+
+✅ Removes duplicates and provides a clean output
+
+✅ Parallel execution for faster results
+
+✅ Lightweight & customizable
+
+📖 **Data Sources Used**
+
+**This tool collects subdomains from:**
 
     🔹 VirusTotal (API required)
     🔹 SecurityTrails (API required)
@@ -26,38 +31,36 @@ This tool collects subdomains from:
     🔹 Findomain (Efficient domain search tool)
     🔹 Wayback Machine (Historical subdomain discovery)
 
-🛠️ Installation
-🔹 Prerequisites
+🛠️**Installation**
+🔹 **Prerequisites**
 
-Ensure you have the following installed:
+**Ensure you have the following installed:**
 
     jq (for JSON parsing)
     curl (for API requests)
     sublist3r (Python-based tool)
     subfinder, amass, assetfinder, findomain (Kali Linux tools)
 
-🔹 Install Required Tools
-
-For Debian/Ubuntu:
+🔹 **Install Required Tools**
 
 sudo apt update && sudo apt install jq curl -y
 
-For Sublist3r:
+**For Sublist3r:**
 
 pip install sublist3r
 
-For Subfinder, Amass, Assetfinder, Findomain:
+For Subfinder, Amass, Assetfinder, Findomain
 
 sudo apt install subfinder amass assetfinder findomain -y
 
-⚡ Usage
+⚡ **Usage**
 
-Run the script with a target domain:
+**Run the script with a target domain:**
 
 chmod +x subdomain.sh
 ./subdomain.sh -u example.com
 
-Example Output:
+**Example Output:**
 
 [+] Collecting subdomains for: example.com
 [+] Fetching from VirusTotal...
@@ -70,30 +73,29 @@ Example Output:
 The final list of subdomains will be stored in:
 📂 all_subdomains.txt
 
-🔑 API Configuration
+🔑 **API Configuration**
 
-For better results, set up API keys for VirusTotal, SecurityTrails, and Chaos (ProjectDiscovery).
+For better results, set up API keys for VirusTotal, SecurityTrails.
 
-    Add your API keys as environment variables:
+   **Add your API keys as environment variables:**
 
     export VIRUSTOTAL_API="your_api_key"
     export SECURITYTRAILS_API="your_api_key"
-    export CHAOS_API="your_api_key"
 
     Or modify the script directly and replace "your_api_key" with your actual keys.
 
-🏴‍☠️ Why Use This Tool?
+🏴‍☠️ **Why Use This Tool?**
 
 ✔️ Combines multiple OSINT sources for maximum subdomain discovery
 ✔️ Fast & automated, saving time in recon
 ✔️ Customizable, allowing easy modification and expansion
-🤝 Contributing
+
+🤝 **Contributing**
 
 Pull requests are welcome! If you have suggestions or want to add more sources, feel free to contribute.
-📜 License
+
+📜 **License**
 
 This project is open-source under the MIT License.
 
-👤 Author
-
-0xNehru - Cybersecurity Enthusiast & Pentester
+👤 **Author** **0xNehru - Cybersecurity Enthusiast & Pentester**
