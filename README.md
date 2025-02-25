@@ -63,14 +63,20 @@ chmod +x subdomain.sh
 **Example Output:**
 
 [+] Collecting subdomains for: example.com
+
 [+] Fetching from VirusTotal...
+
 [+] Fetching from crt.sh...
+
 [+] Fetching from SecurityTrails...
 ...
+
 [+] Merging results and removing duplicates...
+
 [+] Subdomains saved to: all_subdomains.txt
 
 The final list of subdomains will be stored in:
+
 📂 all_subdomains.txt
 
 🔑 **API Configuration**
