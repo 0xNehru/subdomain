@@ -22,8 +22,8 @@ if [ -z "$DOMAIN" ]; then
 fi
 
 # Set API Keys (Replace these with environment variables or a .env file for security)
-VIRUSTOTAL_API=${VIRUSTOTAL_API:-"your_virustotal_api_key"}
-SECURITYTRAILS_API=${SECURITYTRAILS_API:-"your_securitytrails_api_key"}
+VIRUSTOTAL_API=${VIRUSTOTAL_API:-"api-key"}
+SECURITYTRAILS_API=${SECURITYTRAILS_API:-"api-key"}
 
 # Output file
 OUTPUT_FILE="all_subdomains.txt"
@@ -41,13 +41,16 @@ echo "[+] Collecting subdomains for: $DOMAIN"
     # VirusTotal
     if [ -n "$VIRUSTOTAL_API" ]; then
         echo "[+] Fetching from VirusTotal..."
-        curl -s --request GET \n             --url "https://www.virustotal.com/api/v3/domains/$DOMAIN/subdomains" \n             --header "x-apikey: $VIRUSTOTAL_API" | jq -r '.data[].id' > virustotal_subs.txt
+        curl -s --request GET \
+             --url "https://www.virustotal.com/api/v3/domains/$DOMAIN/subdomains" \
+             --header "x-apikey: $VIRUSTOTAL_API" | jq -r '.data[].id' > virustotal_subs.txt
     fi
 
     # SecurityTrails
     if [ -n "$SECURITYTRAILS_API" ]; then
         echo "[+] Fetching from SecurityTrails..."
-        curl -s "https://api.securitytrails.com/v1/domain/$DOMAIN/subdomains" \n             -H "APIKEY: $SECURITYTRAILS_API" | jq -r '.subdomains[]' | sed "s/$/.$DOMAIN/" > securitytrails_subs.txt
+        curl -s "https://api.securitytrails.com/v1/domain/$DOMAIN/subdomains" \
+             -H "APIKEY: $SECURITYTRAILS_API" | jq -r '.subdomains[]' | sed "s/$/.$DOMAIN/" > securitytrails_subs.txt
     fi
 
     # crt.sh (Certificate Transparency Logs)
@@ -68,12 +71,6 @@ echo "[+] Collecting subdomains for: $DOMAIN"
     if command -v subfinder >/dev/null 2>&1; then
         echo "[+] Fetching from Subfinder..."
         subfinder -d $DOMAIN -o subfinder_subs.txt
-    fi
-
-    # Amass
-    if command -v amass >/dev/null 2>&1; then
-        echo "[+] Fetching from Amass..."
-        amass enum -passive -d $DOMAIN -o amass_subs.txt
     fi
 
     # Assetfinder
@@ -98,7 +95,7 @@ wait  # Wait for all background processes to finish
 # Merge and Remove Duplicates
 echo "[+] Merging results and removing duplicates..."
 cat virustotal_subs.txt securitytrails_subs.txt crtsh_subs.txt hackertarget_subs.txt \
-    sublist3r_subs.txt subfinder_subs.txt amass_subs.txt assetfinder_subs.txt findomain_subs.txt wayback_subs.txt | sort -u > $OUTPUT_FILE
+    sublist3r_subs.txt subfinder_subs.txt assetfinder_subs.txt findomain_subs.txt wayback_subs.txt | sort -u > $OUTPUT_FILE
 
 # Final Output
 echo "[+] Subdomains saved to: $OUTPUT_FILE"
