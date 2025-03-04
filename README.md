@@ -26,7 +26,6 @@ This is an automated subdomain enumeration tool that gathers subdomains from mul
     🔹 HackerTarget (Public API)
     🔹 Sublist3r (Python-based subdomain finder)
     🔹 Subfinder (Passive subdomain enumeration)
-    🔹 Amass (OSINT subdomain discovery)
     🔹 Assetfinder (Fast passive discovery)
     🔹 Findomain (Efficient domain search tool)
     🔹 Wayback Machine (Historical subdomain discovery)
