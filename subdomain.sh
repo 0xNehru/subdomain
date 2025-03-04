@@ -22,8 +22,8 @@ if [ -z "$DOMAIN" ]; then
 fi
 
 # Set API Keys (Replace these with environment variables or a .env file for security)
-VIRUSTOTAL_API=${VIRUSTOTAL_API:-"api-key"}
-SECURITYTRAILS_API=${SECURITYTRAILS_API:-"api-key"}
+VIRUSTOTAL_API=${VIRUSTOTAL_API:-"4645d3ae0fde972c15ca47d3d4ca128430aef4e1a284bbb6e17bapi-key"}
+SECURITYTRAILS_API=${SECURITYTRAILS_API:-"nSiiPDHBIRLdOnbWTK5pYapi-key"}
 
 # Output file
 OUTPUT_FILE="all_subdomains.txt"
