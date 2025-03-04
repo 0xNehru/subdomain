@@ -4,18 +4,6 @@
 
 This is an automated subdomain enumeration tool that gathers subdomains from multiple OSINT sources and APIs. It is designed for penetration testers, bug bounty hunters, and cybersecurity professionals to efficiently discover subdomains.
 
-🚀 **Features**
-
-✅ Uses 10+ different sources for subdomain discovery
-
-✅ Supports API-based & public data sources
-
-✅ Removes duplicates and provides a clean output
-
-✅ Parallel execution for faster results
-
-✅ Lightweight & customizable
-
 📖 **Data Sources Used**
 
 **This tool collects subdomains from:**
