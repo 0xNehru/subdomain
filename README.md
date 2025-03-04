@@ -18,16 +18,6 @@ This is an automated subdomain enumeration tool that gathers subdomains from mul
     🔹 Findomain (Efficient domain search tool)
     🔹 Wayback Machine (Historical subdomain discovery)
 
-🛠️**Installation**
-🔹 **Prerequisites**
-
-**Ensure you have the following installed:**
-
-    jq (for JSON parsing)
-    curl (for API requests)
-    sublist3r (Python-based tool)
-    subfinder, amass, assetfinder, findomain (Kali Linux tools)
-
 🔹 **Install Required Tools**
 
 sudo apt update && sudo apt install jq curl -y
